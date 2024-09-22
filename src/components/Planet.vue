@@ -1,38 +1,31 @@
 <script setup>
-import { useGLTF } from "@tresjs/cientos";
 import { useRenderLoop } from "@tresjs/core";
-import Airplane from "./Airplane.vue";
-import Cloud from "./Cloud.vue";
+import { ref } from "vue";
 
-const { nodes } = await useGLTF(
-  "https://raw.githubusercontent.com/Tresjs/assets/main/models/gltf/low-poly/planet.gltf"
-);
-
-const planet = nodes.Planet;
-const icosphere = nodes.Icosphere;
-planet.traverse((child) => {
-  if (child.isMesh) {
-    child.receiveShadow = true;
-  }
+const props = defineProps({
+    texture: {
+        required: true,
+    },
+    index: {
+        required: true,
+    },
 });
 
-const { onLoop } = useRenderLoop();
+const { resume, onLoop } = useRenderLoop();
+const planet = ref(null);
 
 onLoop(({ delta }) => {
-  if (!planet) return;
-  planet.rotation.y += delta * 0.04;
-  planet.rotation.z += delta * 0.02;
-  planet.rotation.x += delta * 0.05;
-  planet.updateMatrixWorld();
+    if (!planet.value) return;
+
+    planet.value.rotation.x += delta * 0.04;
+    planet.value.rotation.y += delta * 0.02;
+    planet.value.rotation.z += delta * 0.05;
 });
 </script>
 
 <template>
-  <primitive :object="planet" />
-  <Airplane :planet="icosphere" />
-  <Cloud
-    v-for="cloud of [1, 2, 3, 4, 5, 6, 7, 8, 9]"
-    :key="cloud"
-    :planet="icosphere"
-  />
+    <TresMesh :ref="planet" :position="[(index - 2) * 3, 0, 0]">
+        <TresSphereGeometry :args="[1, 100, 100]" />
+        <TresMeshStandardMaterial v-bind="texture" displacement-scale="0.2" bump-scale="0.1" />
+    </TresMesh>
 </template>
