@@ -1,9 +1,9 @@
 <template>
   <div class="starry-sky">
-    <canvas class="threejs"></canvas>
+    <canvas class="threejs" />
 
     <div class="main-container">
-      <slot name="main"></slot>
+      <slot name="main" />
     </div>
 
     <!-- <div class="navs-container">
@@ -13,17 +13,20 @@
 </template>
 
 <script>
-import * as THREE from "three";
+import * as THREE from 'three';
 
 export default {
-  name: "StarrySky",
+  name: 'StarrySky',
+
   mounted() {
     this.initThreeJS();
-    window.addEventListener("resize", this.onWindowResize);
+    window.addEventListener('resize', this.onWindowResize);
   },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.onWindowResize);
+
+  beforeUnmount() {
+    window.removeEventListener('resize', this.onWindowResize);
   },
+
   methods: {
     initThreeJS() {
       this.scene = new THREE.Scene();
@@ -35,13 +38,14 @@ export default {
       );
       this.camera.position.z = 500;
 
-      const canvas = this.$el.querySelector(".threejs");
+      const canvas = this.$el.querySelector('.threejs');
       this.renderer = new THREE.WebGLRenderer({ canvas });
       this.renderer.setSize(window.innerWidth, window.innerHeight);
 
       this.createStars();
       this.animate();
     },
+
     createStars() {
       const starGeometry = new THREE.BufferGeometry();
       const starMaterial = new THREE.PointsMaterial({ color: 0xffffff });
@@ -55,15 +59,17 @@ export default {
       }
 
       starGeometry.setAttribute(
-        "position",
+        'position',
         new THREE.Float32BufferAttribute(starVertices, 3)
       );
 
       const stars = new THREE.Points(starGeometry, starMaterial);
       this.scene.add(stars);
     },
+
     animate() {
       requestAnimationFrame(this.animate);
+
       this.renderer.render(this.scene, this.camera);
       this.scene.children.forEach((child) => {
         if (child instanceof THREE.Points) {
@@ -71,6 +77,7 @@ export default {
         }
       });
     },
+
     onWindowResize() {
       this.camera.aspect = window.innerWidth / window.innerHeight;
       this.camera.updateProjectionMatrix();
