@@ -1,19 +1,20 @@
 <template>
-  <div>
+  <div class="main-layout">
     <CanvasContainer />
-    <NavigationContainer />
+    <MainNavigation />
   </div>
 </template>
 
 <script>
-import NavigationContainer from '@/components/NavigationContainer.vue';
 import CanvasContainer from '@/components/CanvasContainer.vue';
+import MainNavigation from '@/components/MainNavigation.vue';
 
 export default {
-  name: 'App',
+  name: 'MainLayout',
+
   components: {
-    NavigationContainer,
     CanvasContainer,
+    MainNavigation,
   },
 };
 </script>
