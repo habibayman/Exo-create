@@ -65,18 +65,18 @@ export default {
 
 <style scoped>
 .canvas-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.canvas-container canvas {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
+}
+
+.canvas-container canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 </style>
