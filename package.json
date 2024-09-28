@@ -12,7 +12,8 @@
     "@tresjs/cientos": "^4.0.2",
     "@tresjs/core": "^4.2.10",
     "three": "^0.168.0",
-    "vue": "^3.4.37"
+    "vue": "^3.4.37",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",

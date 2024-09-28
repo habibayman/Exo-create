@@ -103,14 +103,13 @@ canvas {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Ensure the canvas is behind other content */
+  z-index: -90;
 }
 
 .main-container {
   position: relative;
-  z-index: 1; /* Ensure the main content is above the canvas */
+  z-index: 1;
   width: 100%;
   min-height: 200vh; /* Example height to make the page scrollable */
-  background: transparent; /* Ensure the background is transparent */
 }
 </style>
