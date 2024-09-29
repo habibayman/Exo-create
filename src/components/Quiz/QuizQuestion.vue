@@ -137,6 +137,10 @@ export default {
   transform: scale(1.05);
 }
 
+.quiz-question button.correct:hover {
+  background-color: #28a745;
+}
+
 .quiz-question button.wrong {
   background-color: #dc3545;
   color: #fff;
