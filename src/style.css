@@ -10,3 +10,11 @@ body {
   height: 100%;
   overflow: hidden;
 }
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0b0c10;
+  color: #c5c6c7;
+}
