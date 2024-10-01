@@ -1,20 +1,22 @@
 <template>
   <div class="main-layout">
     <CanvasContainer />
-    <NavigationContainer />
+    <div class="main-content">
+      <QuizContainer />
+    </div>
   </div>
 </template>
 
 <script>
 import CanvasContainer from '@/components/CanvasContainer.vue';
-import NavigationContainer from '@/components/NavigationContainer.vue';
+import QuizContainer from '@/components/Quiz/QuizContainer.vue';
 
 export default {
   name: 'MainLayout',
 
   components: {
     CanvasContainer,
-    NavigationContainer,
+    QuizContainer,
   },
 };
 </script>
@@ -22,5 +24,15 @@ export default {
 <style scoped>
 .main-layout {
   height: 100vh;
+}
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 20px;
 }
 </style>
