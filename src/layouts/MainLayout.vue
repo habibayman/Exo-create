@@ -1,7 +1,6 @@
 <template>
   <div class="main-layout">
     <CanvasContainer />
-
     <div class="main-content">
       <QuizContainer />
     </div>
@@ -26,7 +25,6 @@ export default {
 .main-layout {
   height: 100vh;
 }
-
 .main-content {
   display: flex;
   justify-content: center;
