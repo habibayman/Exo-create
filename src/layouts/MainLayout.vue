@@ -1,7 +1,8 @@
 <template>
   <div class="main-layout">
     <CanvasContainer />
-    <NavigationContainer />
+    <div class="main-content">
+    </div>
   </div>
 </template>
 
@@ -9,12 +10,16 @@
 import CanvasContainer from '@/components/CanvasContainer.vue';
 import NavigationContainer from '@/components/NavigationContainer.vue';
 
+
 export default {
   name: 'MainLayout',
 
   components: {
     CanvasContainer,
     NavigationContainer,
+    Chapter01,
+    Chapter02,
+    ChapterTest,
   },
 };
 </script>
