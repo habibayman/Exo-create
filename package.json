@@ -12,6 +12,7 @@
   "dependencies": {
     "normalize.css": "^8.0.1",
     "three": "^0.168.0",
+    "vite-plugin-string": "^1.2.3",
     "vue": "^3.4.37"
   },
   "devDependencies": {
