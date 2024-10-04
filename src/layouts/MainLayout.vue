@@ -10,6 +10,7 @@
 <script>
 import CanvasContainer from '@/components/CanvasContainer.vue';
 import QuizContainer from '@/components/Quiz/QuizContainer.vue';
+import MainSlideContainer from '../components/Slides/MainSlideContainer.vue';
 
 export default {
   name: 'MainLayout',
@@ -17,6 +18,7 @@ export default {
   components: {
     CanvasContainer,
     QuizContainer,
+    MainSlideContainer
   },
 };
 </script>
