@@ -2,7 +2,7 @@
   <div class="main-layout">
     <CanvasContainer />
     <div class="main-content">
-      <QuizContainer />
+      <GameContainer />
     </div>
   </div>
 </template>
@@ -10,7 +10,8 @@
 <script>
 import CanvasContainer from '@/components/CanvasContainer.vue';
 import QuizContainer from '@/components/Quiz/QuizContainer.vue';
-import MainSlideContainer from '../components/Slides/MainSlideContainer.vue';
+import MainSlideContainer from '@/components/Slides/MainSlideContainer.vue';
+import GameContainer from '@/components/Game/GameContainer.vue';
 
 export default {
   name: 'MainLayout',
@@ -18,7 +19,8 @@ export default {
   components: {
     CanvasContainer,
     QuizContainer,
-    MainSlideContainer
+    MainSlideContainer,
+    GameContainer,
   },
 };
 </script>
