@@ -1,48 +1,57 @@
 <template>
   <div class="slide-container">
-    <component :is="currentChapter"></component>
-    <button class="prev-button" @click="previousChapter">Previous</button>
-    <button class="next-button" @click="nextChapter">Next</button>
+    <component
+      :is="currentChapter"
+      @nextChapter="goToNextChapter"
+      @prevChapter="goToPrevChapter"></component>
   </div>
 </template>
 
 <script>
-import Chapter01 from './Chapters/Chapter01.vue';
-import Chapter02 from './Chapters/Chapter02.vue';
-import Chapter03 from './Chapters/Chapter03.vue';
-import Chapter04 from './Chapters/Chapter04.vue';
-import Chapter05 from './Chapters/Chapter05.vue';
+import Chapter1Slides from './Chapters/Chapter1Slides.vue';
+import Chapter2Slides from './Chapters/Chapter2Slides.vue';
+import Chapter3Slides from './Chapters/Chapter3Slides.vue';
+import Chapter4Slides from './Chapters/Chapter4Slides.vue';
+import Chapter5Slides from './Chapters/Chapter5Slides.vue';
 
 export default {
   components: {
-    Chapter01,
-    Chapter02,
-    Chapter03,
-    Chapter04, 
-    Chapter05
+    Chapter1Slides,
+    Chapter2Slides,
+    Chapter3Slides,
+    Chapter4Slides,
+    Chapter5Slides,
   },
   data() {
     return {
-      chapters: ['Chapter01', 'Chapter02', 'Chapter03', 'Chapter04', 'Chapter05'],
+      chapters: [
+        Chapter1Slides, 
+        Chapter2Slides,
+        Chapter3Slides,
+        Chapter4Slides,
+        Chapter5Slides,
+      ],
       currentChapterIndex: 0,
+      toggleNextChapter: false,
     };
-  },
-  methods: {
-    previousChapter() {
-      if (this.currentChapterIndex > 0) {
-        this.currentChapterIndex--;
-      }
-    },
-    nextChapter() {
-      if (this.currentChapterIndex < this.chapters.length - 1) {
-        this.currentChapterIndex++;
-      }
-    },
   },
   computed: {
     currentChapter() {
       return this.chapters[this.currentChapterIndex];
     },
+  },
+  methods: {
+    goToNextChapter() {
+      if (this.currentChapterIndex < this.chapters.length - 1) {
+        this.currentChapterIndex++;
+      }
+    },
+    goToPrevChapter() {
+      if (this.currentChapterIndex > 0) {
+        this.currentChapterIndex--;
+      }
+    },
+
   },
 };
 </script>
@@ -53,39 +62,9 @@ export default {
   flex-direction: column;
   align-items: center;
   position: relative;
-  height: 80vh;
-  width: 80vw; 
+  width: 100%;
+  height: 75%;
   margin: 2rem auto;
   border-radius: 8px;
-}
-
-/* temp styling will adjust later */
-button {
-  margin: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #777;
-  color: black;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  position: absolute;
-}
-
-button:hover {
-  background-color: #333;
-}
-
-.prev-button {
-  left: 0;
-  transform: translateY(-50%);
-  bottom: 5%;
-}
-
-.next-button {
-  right: 0;
-  transform: translateY(-50%);
-  bottom: 5%;
 }
 </style>

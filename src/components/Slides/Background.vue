@@ -70,7 +70,7 @@ img {
   height: 100%;
   width: 100%;
   object-fit: contain; /* might change later to cover */
-  z-index: -1;
+  z-index: 1;
 }
 
 header {
@@ -79,7 +79,8 @@ header {
   justify-content: center;
   align-items: center;
   height: 100%;
+  width:100;
   transform-style: preserve-3d;
-  z-index: -1;
+  z-index: 1;
 }
 </style>

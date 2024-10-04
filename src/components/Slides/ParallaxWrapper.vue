@@ -20,12 +20,12 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
   perspective: 10px;
-  height: 80vh;
-  width: 80vw; 
-  margin: 2rem auto;
+  width: 845px; 
+  height: 470px;
   font-size: 1.2em;
   border-radius: 8px;
   position: relative;
+  /* z-index: 1; */
 }
 
 .parallax-wrapper::-webkit-scrollbar {

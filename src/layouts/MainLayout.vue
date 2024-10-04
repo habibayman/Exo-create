@@ -2,7 +2,9 @@
   <div class="main-layout">
     <CanvasContainer />
     <div class="main-content">
-      <QuizContainer />
+      <main-slide-container></main-slide-container>
+       <!-- <chapter-1-intro></chapter-1-intro> -->
+      <!-- <QuizContainer /> -->
     </div>
   </div>
 </template>
@@ -18,7 +20,7 @@ export default {
   components: {
     CanvasContainer,
     QuizContainer,
-    MainSlideContainer
+    MainSlideContainer,
   },
 };
 </script>

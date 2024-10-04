@@ -256,7 +256,7 @@ export default [
         planets that are similar in size and composition to Earth, located in the habitable 
         zone of their star, where liquid water could exist.
         Even if we aren’t able to gather samples from exoplanets in the near future, 
-        there are other ways to establish the possibility of life on them.`
+        there are other ways to establish the possibility of life on them.`,
       },
       {
         slideId: 'slide4',
@@ -274,7 +274,6 @@ export default [
         exoplanets continues to improve. New telescopes and instruments are being developed that will allow us to 
         identify s`,
       },
-
     ],
   },
 
