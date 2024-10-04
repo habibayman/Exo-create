@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exoplanet</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <main class="main-container">
+      <div class="canvas-container">
+        <canvas id="canva"> </canvas>
+      </div>
+      <div class="content-container">
+        <div class="sliders-container">
+          <div class="slider-row">
+            <label for="slider1">Water Color</label>
+            <input
+              type="range"
+              class="uWaterColor"
+              min="0"
+              max="100"
+              value="0"
+            />
+          </div>
+          <div class="slider-row">
+            <label for="slider2">Temprature</label>
+            <input
+              type="range"
+              class="uTemperature"
+              min="-50"
+              max="100"
+              value="-35"
+            />
+          </div>
+            <div class="slider-row">
+              <label for="slider3">Land Percentage</label>
+              <input
+                type="range"
+                class="uLandPercentage"
+                min="0"
+                max="65"
+                value="34"
+
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

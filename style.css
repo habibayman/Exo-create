@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow: hidden;
+}
+html {
+  font-size: 62.5%;
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  background-color: black;
+}
+
+.canvas-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.sliders-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 50rem;
+  width: 100%;
+  padding: 2rem;
+}
+
+.slider-row {
+  display: contents;
+}
+
+label {
+  text-align: right;
+  padding-right: 1rem;
+  color: white;
+  font-size: 1.6rem;
+}
+
+input[type="range"] {
+  width: 100%;
+}
