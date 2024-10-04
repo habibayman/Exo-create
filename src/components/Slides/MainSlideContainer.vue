@@ -18,12 +18,18 @@ export default {
     Chapter01,
     Chapter02,
     Chapter03,
-    Chapter04, 
-    Chapter05
+    Chapter04,
+    Chapter05,
   },
   data() {
     return {
-      chapters: ['Chapter01', 'Chapter02', 'Chapter03', 'Chapter04', 'Chapter05'],
+      chapters: [
+        'Chapter01',
+        'Chapter02',
+        'Chapter03',
+        'Chapter04',
+        'Chapter05',
+      ],
       currentChapterIndex: 0,
     };
   },
@@ -53,8 +59,7 @@ export default {
   flex-direction: column;
   align-items: center;
   position: relative;
-  height: 80vh;
-  width: 80vw; 
+  width: 100%;
   margin: 2rem auto;
   border-radius: 8px;
 }

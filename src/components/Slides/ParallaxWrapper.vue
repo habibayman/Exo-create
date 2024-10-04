@@ -4,14 +4,13 @@
   </div>
 </template>
 
-
 <script>
 export default {
   props: {
     backgroundColor: {
       type: String,
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -21,7 +20,7 @@ export default {
   overflow-x: hidden;
   perspective: 10px;
   height: 80vh;
-  width: 80vw; 
+  width: 100%;
   margin: 2rem auto;
   font-size: 1.2em;
   border-radius: 8px;
@@ -29,7 +28,6 @@ export default {
 }
 
 .parallax-wrapper::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 </style>
- 

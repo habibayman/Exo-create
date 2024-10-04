@@ -110,7 +110,7 @@ export default {
 
 @media (min-width: 768px) {
   .quiz-question .option {
-    width: 80%;
+    width: 100%;
   }
 }
 
