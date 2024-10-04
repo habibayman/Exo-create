@@ -22,8 +22,7 @@ export default {
   perspective: 10px;
   height: 80vh;
   width: 80vw; 
-  margin: 3rem auto;
-  padding: 1rem;
+  margin: 2rem auto;
   font-size: 1.2em;
   border-radius: 8px;
   position: relative;
