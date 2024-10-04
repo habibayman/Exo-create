@@ -56,3 +56,33 @@ label {
 input[type="range"] {
   width: 100%;
 }
+
+@media (max-width: 1016px) {
+  .main-container {
+    flex-direction: column; /* Stack items on top of each other */
+  }
+
+  .canvas-container {
+    order: 1; /* Place the canvas above the sliders */
+    height: 50%; /* Adjust height as needed */
+  }
+
+  .content-container {
+    order: 2; /* Place the sliders below the canvas */
+    width: 100%; /* Ensure full width for content */
+  }
+
+  .sliders-container {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  label {
+    font-size: 1.4rem; /* Smaller font size for labels */
+  }
+
+  input[type="range"] {
+    height: 20px; /* Adjust slider height if needed */
+  }
+}
+
+/*i suck at making things responsive sorry*/
