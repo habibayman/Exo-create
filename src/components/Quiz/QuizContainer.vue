@@ -77,15 +77,36 @@ export default {
   data() {
     return {
       showIntro: true,
-      questions: quizQuestions,
+      questions: [],
       currentIndex: 0,
       score: 0,
       nextQuestionTransition: false,
     };
   },
+
   methods: {
+    shuffle(array) {
+      let currentIndex = array.length;
+      let randomIndex;
+
+      while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex],
+          array[currentIndex],
+        ];
+      }
+
+      return array;
+    },
     startQuiz() {
       this.showIntro = false;
+      this.questions = quizQuestions.map((q) => ({
+        ...q,
+        answers: this.shuffle(q.options),
+      }));
       this.playSound('show-question');
     },
     processAnswer(correct) {
