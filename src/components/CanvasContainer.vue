@@ -236,7 +236,7 @@ export default {
 
     playWarpSound() {
       const audio = new Audio(warpSound);
-      audio.play();
+      audio.play().catch(() => {});
     },
 
     onFlagButtonClick() {
