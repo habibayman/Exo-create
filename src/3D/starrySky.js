@@ -6,9 +6,9 @@ export function createStars(scene) {
 
   const starVertices = [];
   for (let i = 0; i < 10000; i++) {
-    const x = THREE.MathUtils.randFloatSpread(2000);
-    const y = THREE.MathUtils.randFloatSpread(2000);
-    const z = THREE.MathUtils.randFloatSpread(2000);
+    const x = THREE.MathUtils.randFloatSpread(4500);
+    const y = THREE.MathUtils.randFloatSpread(4500);
+    const z = THREE.MathUtils.randFloatSpread(4500);
     starVertices.push(x, y, z);
   }
 
@@ -16,6 +16,13 @@ export function createStars(scene) {
     'position',
     new THREE.Float32BufferAttribute(starVertices, 3)
   );
+
   const stars = new THREE.Points(starGeometry, starMaterial);
   scene.add(stars);
+
+  return {
+    points: stars,
+    geometry: starGeometry,
+    material: starMaterial,
+  };
 }
