@@ -15,9 +15,11 @@
       </button>
 
       <div ref="mainContent" class="main-content animate__animated">
-        <MainSlideContainer v-if="currentMode === 0" />
+        <SlideContainer v-if="currentMode === 0" @go-to-quiz="nextMode" />
 
-        <QuizContainer v-else-if="currentMode === 1" />
+        <QuizContainer
+          v-else-if="currentMode === 1"
+          @go-to-game="nextMode" />
 
         <GameContainer v-else-if="currentMode === 2" />
       </div>
@@ -28,7 +30,7 @@
 <script>
 import CanvasContainer from '@/components/CanvasContainer.vue';
 import QuizContainer from '@/components/Quiz/QuizContainer.vue';
-import MainSlideContainer from '@/components/Slides/MainSlideContainer.vue';
+import SlideContainer from '@/components/Slides/SlideContainer.vue';
 import GameContainer from '@/components/Game/GameContainer.vue';
 
 export default {
@@ -37,7 +39,7 @@ export default {
   components: {
     CanvasContainer,
     QuizContainer,
-    MainSlideContainer,
+    SlideContainer,
     GameContainer,
   },
 
@@ -53,6 +55,12 @@ export default {
   },
 
   methods: {
+    async nextMode() {
+      await this.exitCurrentSlide();
+
+      this.$refs.canvasContainer.toggleWarp(true);
+    },
+
     enterCurrentSlide() {
       return new Promise((resolve) => {
         this.isContainerOpen = true;
@@ -155,6 +163,7 @@ export default {
 }
 
 .main-content {
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
