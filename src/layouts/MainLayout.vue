@@ -3,15 +3,12 @@
     <CanvasContainer />
     <div class="main-content">
       <main-slide-container></main-slide-container>
-       <!-- <chapter-1-intro></chapter-1-intro> -->
-      <!-- <QuizContainer /> -->
     </div>
   </div>
 </template>
 
 <script>
 import CanvasContainer from '@/components/CanvasContainer.vue';
-import QuizContainer from '@/components/Quiz/QuizContainer.vue';
 import MainSlideContainer from '../components/Slides/MainSlideContainer.vue';
 
 export default {
@@ -19,7 +16,6 @@ export default {
 
   components: {
     CanvasContainer,
-    QuizContainer,
     MainSlideContainer,
   },
 };

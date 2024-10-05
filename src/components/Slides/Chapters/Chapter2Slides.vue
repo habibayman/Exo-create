@@ -1,19 +1,19 @@
 <template>
   <div v-if="!slidesStarted">
     <parallax-wrapper
-      :backgroundColor="'linear-gradient(to right, #80d98f, #56c66d)'">
-      <background
-        :frontImage="'/src/assets/images/green-planet-front.png'"
-        :backImage="'/src/assets/images/green-planet-back.png'"
-        :skyImage="'/src/assets/images/green-planet-sky.png'"
-        :frontTranslateZ="-5"
-        :frontScale="2"
-        :backTranslateZ="-8"
-        :backScale="2.3"
-        :skyTranslateZ="-10"
-        :skyScale="2.1">
-      </background>
-      <button @click="startSlides" class="start-slides">Start</button>
+      :background-color="'linear-gradient(to right, #80d98f, #56c66d)'">
+      <slide-background
+        :front-image="'/src/assets/images/green-planet-front.png'"
+        :back-image="'/src/assets/images/green-planet-back.png'"
+        :sky-image="'/src/assets/images/green-planet-sky.png'"
+        :front-translate-z="-5"
+        :front-scale="2"
+        :back-translate-z="-8"
+        :back-scale="2.3"
+        :sky-translate-z="-10"
+        :sky-scale="2.1">
+      </slide-background>
+      <button class="start-slides" @click="startSlides">Start</button>
     </parallax-wrapper>
   </div>
 
@@ -26,45 +26,46 @@
 
     <button
       v-if="currentSlideIndex > 0"
-      @click="prevSlide"
-      class="prev-button">
+      class="prev-button"
+      @click="prevSlide">
       Previous
     </button>
     <button
       v-if="currentSlideIndex < chapterSlides.length - 1"
-      @click="nextSlide"
-      class="next-button">
+      class="next-button"
+      @click="nextSlide">
       Next
     </button>
 
     <button
       v-if="currentSlideIndex === chapterSlides.length - 1"
-      @click="nextChapter"
-      class="next-chapter-button">
+      class="next-chapter-button"
+      @click="nextChapter">
       Next Chapter
     </button>
 
     <button
       v-if="currentSlideIndex === 0 && chapterIndex > 0"
-      @click="prevChapter"
-      class="prev-chapter-button">
+      class="prev-chapter-button"
+      @click="prevChapter">
       Previous Chapter
     </button>
   </div>
 </template>
 
 <script>
-import SlideWrapper from '../SlideWrapper.vue';
+import SlideWrapper from '@/components/Slides/SlideWrapper.vue';
 import ParallaxWrapper from '@/components/Slides/ParallaxWrapper.vue';
 import slidesContent from '@/data/slidesContent.js';
-import Background from '../Background.vue';
+import SlideBackground from '@/components/Slides/SlideBackground.vue';
 
 export default {
   components: {
     SlideWrapper,
     ParallaxWrapper,
-    Background,
+    SlideBackground,
   },
+  emits: ['nextChapter', 'prevChapter'],
   data() {
     return {
       currentSlideIndex: 0,
@@ -79,8 +80,8 @@ export default {
   },
   methods: {
     startSlides() {
-      this.slidesStarted = true; 
-      this.currentSlideIndex = 0; 
+      this.slidesStarted = true;
+      this.currentSlideIndex = 0;
     },
     nextSlide() {
       if (this.currentSlideIndex < this.chapterSlides.length - 1) {
@@ -98,7 +99,7 @@ export default {
     },
     prevChapter() {
       this.$emit('prevChapter');
-      this.currentSlideIndex = 0
+      this.currentSlideIndex = 0;
     },
   },
 };
@@ -112,7 +113,11 @@ export default {
   align-items: center;
   height: 100%;
   max-width: 845px;
-  background: linear-gradient(to right, rgba(128, 217, 142, 0.7), rgba(86, 198, 109, 0.7));
+  background: linear-gradient(
+    to right,
+    rgba(128, 217, 142, 0.7),
+    rgba(86, 198, 109, 0.7)
+  );
   position: relative;
   border-radius: 15px;
   box-shadow: 0 0 10px #56c66d;
@@ -161,5 +166,4 @@ button:hover {
 .next-button {
   right: 10px;
 }
-
 </style>

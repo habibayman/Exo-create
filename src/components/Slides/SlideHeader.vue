@@ -1,11 +1,10 @@
 <template>
-    <section>
-        <slot></slot>
-    </section>
+  <section>
+    <slot></slot>
+  </section>
 </template>
 
-<script>
-</script>
+<script></script>
 
 <style scoped>
 section {

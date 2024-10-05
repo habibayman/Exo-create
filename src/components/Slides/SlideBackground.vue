@@ -79,7 +79,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 100%;
-  width:100;
+  width: 100;
   transform-style: preserve-3d;
   z-index: 1;
 }

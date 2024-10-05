@@ -54,7 +54,7 @@ export default [
       },
       {
         slideId: 'slide3',
-        title: `Super-Earth Exoplanets`,
+        title: 'Super-Earth Exoplanets',
         content: `Super-Earth exoplanets are typically terrestrial planets that may
         or may not have atmospheres. Unlike any in our solar system, they
         are more massive than Earth, but lighter than Neptune. They are
@@ -67,7 +67,7 @@ export default [
       },
       {
         slideId: 'slide4',
-        title: `Gas Gaints Exoplanets`,
+        title: 'Gas Gaints Exoplanets',
         content: `Gas giant: like Jupiter or Saturn in our solar system, they are
         composed mostly of helium and/or hydrogen. Gas giants nearer to
         their stars are often called “hot Jupiters” More variety is hidden
@@ -88,7 +88,7 @@ export default [
       },
       {
         slideId: 'slide6',
-        title: `Neptunian Exoplanets`,
+        title: 'Neptunian Exoplanets',
         content: `They are similar in size to Neptune or Uranus in our solar
         system. (Neptune is about four times the size of Earth). they may
         have a mixture of interiors though all would be rocky with heavier
@@ -103,7 +103,7 @@ export default [
       },
       {
         slideId: 'slide7',
-        title: `Research on Neptunina Exoplanets`,
+        title: 'Research on Neptunina Exoplanets',
         content: `Researchers discovered an ice giant exoplanet 25,000 light-years
         away. We don’t know much about its composition, what elements are
         present in its atmosphere, but it’s in a similar orbit to its star
@@ -115,7 +115,7 @@ export default [
       },
       {
         slideId: 'slide8',
-        title: `Future of Research`,
+        title: 'Future of Research',
         content: `Future space telescopes will be able to analyze the light from some
         of these planets, searching for water or a mixture of gases that
         resembles our own atmosphere. We will gain a better understanding
@@ -142,7 +142,7 @@ export default [
       },
       {
         slideId: 'slide2',
-        title: `Radial Velocity`,
+        title: 'Radial Velocity',
         content: `Radial velocity (watching for wobbles): Take a look at the shown
         animation. At first glance, things look normal; the small planet
         orbits the big star. You've probably seen this many times. But
@@ -154,7 +154,7 @@ export default [
       },
       {
         slideId: 'slide3',
-        title: `Radial Velcoty`,
+        title: 'Radial Velcoty',
         content: `This also affects the star's light spectrum. If the star moves in
         the direction of the observer it will appear to be shifted toward
         blue. If it is moving away from the observer, it will shift toward
@@ -167,7 +167,7 @@ export default [
       },
       {
         slideId: 'slide4',
-        title: `Transit`,
+        title: 'Transit',
         content: `When a planet passes directly between an observer and the star it
         orbits, it blocks some of that star's light. For a brief period of
         time, that star actually gets dimmer. It's a tiny change, but it's
@@ -182,7 +182,7 @@ export default [
       },
       {
         slideId: 'slide5',
-        title: `Transit`,
+        title: 'Transit',
         content: `You can see that in the animation above (animation 2).
         Also, the farther away a planet is, the longer it takes to orbit
         and pass in front of its star. So the longer a transit event lasts,
@@ -200,7 +200,7 @@ export default [
       },
       {
         slideId: 'slide7',
-        title: `Direct Imaging and Challenges`,
+        title: 'Direct Imaging and Challenges',
         content: `Exoplanets are far away and are millions of times dimmer than the
         stars they orbit. Unsurprisingly, taking pictures of them is
         exceedingly hard. The major problem astronomers face in trying to
@@ -212,7 +212,7 @@ export default [
       },
       {
         slideId: 'slide8',
-        title: `Techniques to Block Starlight`,
+        title: 'Techniques to Block Starlight',
         content: `To overcome this challenge, astronomers use various techniques to
         block out the light of stars that might have planets orbiting them.
         Once the glare of the star is reduced, they can get a better look
@@ -225,7 +225,7 @@ export default [
       },
       {
         slideId: 'slide9',
-        title: `Techniques to Block Starlight`,
+        title: 'Techniques to Block Starlight',
         content: `Second method is Star Shade: This device is positioned to block light
         from a star before it even enters a telescope. It would be a
         separate spacecraft, designed to position itself at just the right

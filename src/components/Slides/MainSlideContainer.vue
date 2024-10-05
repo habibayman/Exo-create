@@ -2,17 +2,17 @@
   <div class="slide-container">
     <component
       :is="currentChapter"
-      @nextChapter="goToNextChapter"
-      @prevChapter="goToPrevChapter"></component>
+      @next-chapter="goToNextChapter"
+      @prev-chapter="goToPrevChapter"></component>
   </div>
 </template>
 
 <script>
-import Chapter1Slides from './Chapters/Chapter1Slides.vue';
-import Chapter2Slides from './Chapters/Chapter2Slides.vue';
-import Chapter3Slides from './Chapters/Chapter3Slides.vue';
-import Chapter4Slides from './Chapters/Chapter4Slides.vue';
-import Chapter5Slides from './Chapters/Chapter5Slides.vue';
+import Chapter1Slides from '@/components/Slides/Chapters/Chapter1Slides.vue';
+import Chapter2Slides from '@/components/Slides/Chapters/Chapter2Slides.vue';
+import Chapter3Slides from '@/components/Slides/Chapters/Chapter3Slides.vue';
+import Chapter4Slides from '@/components/Slides/Chapters/Chapter4Slides.vue';
+import Chapter5Slides from '@/components/Slides/Chapters/Chapter5Slides.vue';
 
 export default {
   components: {
@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       chapters: [
-        Chapter1Slides, 
+        Chapter1Slides,
         Chapter2Slides,
         Chapter3Slides,
         Chapter4Slides,
@@ -51,7 +51,6 @@ export default {
         this.currentChapterIndex--;
       }
     },
-
   },
 };
 </script>

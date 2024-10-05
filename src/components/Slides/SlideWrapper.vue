@@ -11,7 +11,7 @@ export default {
   props: {
     title: {
       type: String,
-      required: false,
+      required: true,
     },
     content: {
       type: String,
@@ -47,6 +47,7 @@ h2 {
   margin-bottom: 10px;
   z-index: 1;
 }
+
 p {
   font-family: 'Exo 2', sans-serif;
   font-size: 1.1em;
