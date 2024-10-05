@@ -10,6 +10,8 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
+    "gsap": "^3.12.5",
     "normalize.css": "^8.0.1",
     "three": "^0.168.0",
     "vite-plugin-string": "^1.2.3",

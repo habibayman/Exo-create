@@ -9,6 +9,16 @@
     </div>
 
     <div class="quiz-content">
+      <div
+        v-if="currentIndex < questions.length && !showIntro"
+        class="progress-dash">
+        <div
+          v-for="(question, index) in questions"
+          :key="index"
+          class="dash"
+          :class="{ active: index === currentIndex }"></div>
+      </div>
+
       <transition name="fade" mode="out-in">
         <div v-if="showIntro" key="intro">
           <div class="intro-message">
@@ -67,15 +77,36 @@ export default {
   data() {
     return {
       showIntro: true,
-      questions: quizQuestions,
+      questions: [],
       currentIndex: 0,
       score: 0,
       nextQuestionTransition: false,
     };
   },
+
   methods: {
+    shuffle(array) {
+      let currentIndex = array.length;
+      let randomIndex;
+
+      while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex],
+          array[currentIndex],
+        ];
+      }
+
+      return array;
+    },
     startQuiz() {
       this.showIntro = false;
+      this.questions = quizQuestions.map((q) => ({
+        ...q,
+        answers: this.shuffle(q.options),
+      }));
       this.playSound('show-question');
     },
     processAnswer(correct) {
@@ -180,15 +211,13 @@ export default {
 
 .quiz-container {
   text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  box-shadow: 0 0 10px #66fcf1;
   transition: all 0.3s ease-out;
   font-size: 1.2em;
   overflow: hidden;
   position: relative;
   padding: 30px;
   width: 100%;
+  background: black;
 }
 
 @media (min-width: 768px) {
@@ -204,7 +233,7 @@ export default {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 0;
+  z-index: 11;
   filter: blur(2px);
 }
 
@@ -212,7 +241,7 @@ export default {
   position: absolute;
   left: -100%;
   transform: rotate(45deg) scale(1.8);
-  z-index: 5;
+  z-index: 30;
 }
 
 .quiz-rocket.active {
@@ -247,6 +276,9 @@ export default {
 
 .quiz-content {
   position: relative;
+  z-index: 25;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .fade-enter-active,
@@ -261,12 +293,31 @@ export default {
 
 .question-content {
   position: relative;
-  z-index: 1;
+  z-index: 24;
   transition: all 0.75s;
   opacity: 1;
 }
 
 .question-content.fade-out {
   opacity: 0;
+}
+
+.progress-dash {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.dash {
+  width: 20px;
+  height: 10px;
+  background-color: #1f2833;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.dash.active {
+  background-color: #66fcf1;
 }
 </style>
