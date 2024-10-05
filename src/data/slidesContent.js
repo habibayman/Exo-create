@@ -1,6 +1,7 @@
 export default [
   {
     title: 'Chapter 1',
+    backgroundImage: '/assets/images/chapter1Background.jpg',
     slides: [
       {
         slideId: 'slide1',
@@ -9,6 +10,7 @@ export default [
         doesnt orbit our sun. Most orbit other stars, like Earth. Believe
         it or not, there are planets that orbit pairs or even groups of
         stars, imagine having three or four suns in the sky!`,
+        videoUrl: 'https://path_to_your_video.mp4',
       },
       {
         slideId: 'slide2',
@@ -34,6 +36,7 @@ export default [
   },
   {
     title: 'Chapter 2',
+    backgroundImage: '/assets/images/chapter2Background.jpg',
     slides: [
       {
         slideId: 'slide1',
@@ -127,6 +130,7 @@ export default [
   },
   {
     title: 'Chapter 3',
+    backgroundImage: '/assets/images/chapter3Background.jpg',
     slides: [
       {
         slideId: 'slide1',
@@ -196,7 +200,7 @@ export default [
         combined light curves can give us the same information as a single
         one; it just takes more work from astronomers to pick out each
         planet in the data. NASA's Kepler mission, which hunted for planets
-        using the transit method, has found thousands of possible exoplanet`
+        using the transit method, has found thousands of possible exoplanet`,
       },
       {
         slideId: 'slide7',
@@ -239,6 +243,7 @@ export default [
   },
   {
     title: 'Chapter 4',
+    backgroundImage: '/assets/images/chapter4Background.jpg',
     slides: [
       {
         slideId: 'slide1',
@@ -284,6 +289,7 @@ export default [
 
   {
     title: 'Chapter 5',
+    backgroundImage: '/assets/images/chapter5Background.jpg',
     slides: [
       {
         slideId: 'slide1',
@@ -341,6 +347,7 @@ export default [
   },
   {
     title: 'Chapter 6',
+    backgroundImage: '/assets/images/chapter6Background.jpg',
     slides: [
       {
         slideId: 'slide1',

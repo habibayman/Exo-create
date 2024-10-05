@@ -23,7 +23,7 @@ export default [
   {
     text: 'What happens when a planet transits in front of its star?',
     options: [
-      { text: "The planet's atmosphere becomes visible.", correct: false },
+      { text: 'The planet\'s atmosphere becomes visible.', correct: false },
       { text: 'The star temporarily becomes brighter.', correct: false },
       { text: 'The star temporarily becomes dimmer.', correct: true },
       { text: 'The planet begins to wobble.', correct: false },
@@ -39,7 +39,7 @@ export default [
     ],
   },
   {
-    text: "When a planet passes directly between an observer and the star it orbits, it blocks some of that star's light. This is what method?",
+    text: 'When a planet passes directly between an observer and the star it orbits, it blocks some of that star\'s light. This is what method?',
     options: [
       { text: 'Transit', correct: true },
       { text: 'Gravitational Microlensing', correct: false },
@@ -69,7 +69,7 @@ export default [
     ],
   },
   {
-    text: "In the Radial velocity method, if the star moves in the direction of the observer, it will appear to be shifted toward what in the star's light spectrum?",
+    text: 'In the Radial velocity method, if the star moves in the direction of the observer, it will appear to be shifted toward what in the star\'s light spectrum?',
     options: [
       { text: 'Red', correct: false },
       { text: 'Blue', correct: true },
@@ -98,7 +98,7 @@ export default [
   {
     text: 'What happens when a planet transits in front of its star?',
     options: [
-      { text: "The planet's atmosphere becomes visible.", correct: false },
+      { text: 'The planet\'s atmosphere becomes visible.', correct: false },
       { text: 'The star temporarily becomes brighter.', correct: false },
       { text: 'The star temporarily becomes dimmer.', correct: true },
       { text: 'The planet begins to wobble.', correct: false },

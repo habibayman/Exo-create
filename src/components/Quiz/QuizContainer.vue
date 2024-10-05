@@ -47,7 +47,8 @@
           <QuizResult
             :score="score"
             :total="questions.length"
-            @restart="restartQuiz" />
+            @restart="restartQuiz"
+            @go-to-game="$emit('go-to-game')" />
         </div>
       </transition>
     </div>
@@ -74,6 +75,7 @@ export default {
     QuizQuestion,
     QuizResult,
   },
+  emits: ['go-to-game'],
   data() {
     return {
       showIntro: true,

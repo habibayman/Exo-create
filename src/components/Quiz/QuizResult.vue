@@ -1,7 +1,10 @@
 <template>
   <div class="quiz-result">
     <h2>You scored {{ score }} out of {{ total }}</h2>
-    <button @click="$emit('restart')">Restart Quiz</button>
+    <div class="button-group">
+      <button @click="$emit('restart')">Restart Quiz</button>
+      <button @click="$emit('goToGame')">Go to Game</button>
+    </div>
   </div>
 </template>
 
@@ -18,7 +21,7 @@ export default {
       required: true,
     },
   },
-  emits: ['restart'],
+  emits: ['restart', 'goToGame'],
 };
 </script>
 
@@ -30,5 +33,13 @@ export default {
 .quiz-result button {
   font-size: 1.2em;
   padding: 15px;
+}
+
+.quiz-result .button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 </style>
