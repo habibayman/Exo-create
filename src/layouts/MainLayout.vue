@@ -5,7 +5,7 @@
       @open-current-mode="enterCurrentSlide"
       @change-current-mode="changeCurrentMode" />
 
-    <div ref="mainContainer" class="main-container">
+    <div v-if="isContainerOpen" ref="mainContainer" class="main-container">
       <div
         ref="mainContainerBackdrop"
         class="backdrop animate__animated animate__faster"></div>
@@ -18,7 +18,7 @@
         <MainSlideContainer v-if="currentMode === 0" />
 
         <QuizContainer v-else-if="currentMode === 1" />
-        
+
         <GameContainer v-else-if="currentMode === 2" />
       </div>
     </div>
@@ -44,38 +44,43 @@ export default {
   data() {
     return {
       currentMode: 1,
+      isContainerOpen: false,
     };
   },
 
   mounted() {
-    this.$refs.mainContainer.style.display = 'none';
     this.$refs.canvasContainer.toggleWarp(true);
   },
 
   methods: {
     enterCurrentSlide() {
       return new Promise((resolve) => {
-        this.$refs.mainContainer.style.display = 'flex';
-        this.$refs.mainContent.classList.add('animate__fadeInUpBig');
-        this.$refs.mainContainerBackdrop.classList.add('animate__fadeIn');
+        this.isContainerOpen = true;
 
-        this.$refs.mainContainerBackdrop.addEventListener(
-          'animationend',
-          () => {
-            this.$refs.mainContent.classList.remove(
-              'animate__fadeInUpBig'
-            );
+        this.$nextTick(() => {
+          this.$refs.mainContent.classList.add('animate__fadeInUpBig');
+          this.$refs.mainContainerBackdrop.classList.add(
+            'animate__fadeIn'
+          );
 
-            this.$refs.mainContainerBackdrop.classList.remove(
-              'animate__fadeIn'
-            );
+          this.$refs.mainContent.addEventListener(
+            'animationend',
+            () => {
+              this.$refs.mainContent.classList.remove(
+                'animate__fadeInUpBig'
+              );
 
-            resolve();
-          },
-          {
-            once: true,
-          }
-        );
+              this.$refs.mainContainerBackdrop.classList.remove(
+                'animate__fadeIn'
+              );
+
+              resolve();
+            },
+            {
+              once: true,
+            }
+          );
+        });
       });
     },
 
@@ -84,7 +89,7 @@ export default {
         this.$refs.mainContent.classList.add('animate__fadeOutDownBig');
         this.$refs.mainContainerBackdrop.classList.add('animate__fadeOut');
 
-        this.$refs.mainContainerBackdrop.addEventListener(
+        this.$refs.mainContent.addEventListener(
           'animationend',
           () => {
             this.$refs.mainContent.classList.remove(
@@ -95,7 +100,7 @@ export default {
               'animate__fadeOut'
             );
 
-            this.$refs.mainContainer.style.display = 'none';
+            this.isContainerOpen = false;
 
             resolve();
           },

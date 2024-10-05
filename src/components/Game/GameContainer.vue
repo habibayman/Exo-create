@@ -1,8 +1,6 @@
 <template>
   <div class="game-container">
-    <div class="canvas-container">
-      <canvas ref="canvasElement"></canvas>
-    </div>
+    <canvas ref="canvasElement"></canvas>
 
     <div class="game-content-container" @input="onSliderInputHandler">
       <div class="slider-row">
@@ -64,12 +62,13 @@ export default {
         this.$refs.canvasElement.clientWidth /
           this.$refs.canvasElement.clientHeight,
         0.1,
-        1000
+        500
       );
+
       if (window.innerWidth < 768) {
         this.camera.position.z = 9;
       } else {
-        this.camera.position.z = 12;
+        this.camera.position.z = 10;
       }
 
       // Renderer
@@ -133,6 +132,12 @@ export default {
     },
 
     onWindowResize() {
+      if (window.innerWidth < 768) {
+        this.camera.position.z = 9;
+      } else {
+        this.camera.position.z = 10;
+      }
+
       this.camera.aspect =
         this.$refs.canvasElement.clientWidth /
         this.$refs.canvasElement.clientHeight;
@@ -142,12 +147,6 @@ export default {
         this.$refs.canvasElement.clientHeight,
         false
       );
-
-      if (window.innerWidth < 768) {
-        this.camera.position.z = 9;
-      } else {
-        this.camera.position.z = 12;
-      }
 
       this.camera.updateProjectionMatrix();
     },
@@ -178,20 +177,12 @@ export default {
   display: flex;
   flex-direction: row;
   gap: 20px;
-}
-
-.game-container .canvas-container {
-  width: 66.666%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  padding: 20px;
 }
 
 .game-container canvas {
-  width: 100%;
+  width: 66.666%;
   height: 100%;
-  max-height: 800px;
 }
 
 .game-content-container {
