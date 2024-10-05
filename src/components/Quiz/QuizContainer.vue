@@ -9,6 +9,16 @@
     </div>
 
     <div class="quiz-content">
+      <div
+        v-if="currentIndex < questions.length && !showIntro"
+        class="progress-dash">
+        <div
+          v-for="(question, index) in questions"
+          :key="index"
+          class="dash"
+          :class="{ active: index === currentIndex }"></div>
+      </div>
+
       <transition name="fade" mode="out-in">
         <div v-if="showIntro" key="intro">
           <div class="intro-message">
@@ -67,15 +77,36 @@ export default {
   data() {
     return {
       showIntro: true,
-      questions: quizQuestions,
+      questions: [],
       currentIndex: 0,
       score: 0,
       nextQuestionTransition: false,
     };
   },
+
   methods: {
+    shuffle(array) {
+      let currentIndex = array.length;
+      let randomIndex;
+
+      while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex],
+          array[currentIndex],
+        ];
+      }
+
+      return array;
+    },
     startQuiz() {
       this.showIntro = false;
+      this.questions = quizQuestions.map((q) => ({
+        ...q,
+        answers: this.shuffle(q.options),
+      }));
       this.playSound('show-question');
     },
     processAnswer(correct) {
@@ -269,5 +300,24 @@ export default {
 
 .question-content.fade-out {
   opacity: 0;
+}
+
+.progress-dash {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.dash {
+  width: 20px;
+  height: 10px;
+  background-color: #1f2833;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.dash.active {
+  background-color: #66fcf1;
 }
 </style>
