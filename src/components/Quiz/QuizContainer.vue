@@ -180,15 +180,13 @@ export default {
 
 .quiz-container {
   text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  box-shadow: 0 0 10px #66fcf1;
   transition: all 0.3s ease-out;
   font-size: 1.2em;
   overflow: hidden;
   position: relative;
   padding: 30px;
   width: 100%;
+  background: black;
 }
 
 @media (min-width: 768px) {
@@ -204,7 +202,7 @@ export default {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 0;
+  z-index: 11;
   filter: blur(2px);
 }
 
@@ -212,7 +210,7 @@ export default {
   position: absolute;
   left: -100%;
   transform: rotate(45deg) scale(1.8);
-  z-index: 5;
+  z-index: 30;
 }
 
 .quiz-rocket.active {
@@ -247,6 +245,9 @@ export default {
 
 .quiz-content {
   position: relative;
+  z-index: 25;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .fade-enter-active,
@@ -261,7 +262,7 @@ export default {
 
 .question-content {
   position: relative;
-  z-index: 1;
+  z-index: 24;
   transition: all 0.75s;
   opacity: 1;
 }
