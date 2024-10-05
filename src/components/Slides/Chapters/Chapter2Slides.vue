@@ -24,18 +24,30 @@
       :content="chapterSlides[currentSlideIndex].content">
     </slide-wrapper>
 
-    <button @click="prevSlide">Previous</button>
-    <button @click="nextSlide">Next</button>
+    <button
+      v-if="currentSlideIndex > 0"
+      @click="prevSlide"
+      class="prev-button">
+      Previous
+    </button>
+    <button
+      v-if="currentSlideIndex < chapterSlides.length - 1"
+      @click="nextSlide"
+      class="next-button">
+      Next
+    </button>
 
     <button
       v-if="currentSlideIndex === chapterSlides.length - 1"
-      @click="nextChapter">
+      @click="nextChapter"
+      class="next-chapter-button">
       Next Chapter
     </button>
 
     <button
       v-if="currentSlideIndex === 0 && chapterIndex > 0"
-      @click="prevChapter">
+      @click="prevChapter"
+      class="prev-chapter-button">
       Previous Chapter
     </button>
   </div>
@@ -46,14 +58,12 @@ import SlideWrapper from '../SlideWrapper.vue';
 import ParallaxWrapper from '@/components/Slides/ParallaxWrapper.vue';
 import slidesContent from '@/data/slidesContent.js';
 import Background from '../Background.vue';
-import Content from '../Content.vue';
 
 export default {
   components: {
     SlideWrapper,
     ParallaxWrapper,
     Background,
-    Content,
   },
   data() {
     return {
@@ -102,9 +112,7 @@ export default {
   align-items: center;
   height: 100%;
   max-width: 845px;
-
-  background: linear-gradient(to right, #80d98f, #56c66d);
-  padding: 2rem;
+  background: linear-gradient(to right, rgba(128, 217, 142, 0.7), rgba(86, 198, 109, 0.7));
   position: relative;
   border-radius: 15px;
   box-shadow: 0 0 10px #56c66d;
@@ -124,4 +132,34 @@ export default {
   cursor: pointer;
   z-index: 5;
 }
+
+button {
+  position: absolute;
+  bottom: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #80d98f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+button:hover {
+  background: #56c66d;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
 </style>

@@ -10,6 +10,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "normalize.css": "^8.0.1",
     "three": "^0.168.0",
     "vue": "^3.4.37"

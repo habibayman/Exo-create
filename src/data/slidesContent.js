@@ -177,27 +177,31 @@ export default [
         When a planet passes in front of the star and blocks some of its
         light, the light curve indicates this drop in brightness. The size
         and length of a transit can tell us a lot about the planet that's
-        causing the transit.`,
+        causing the transit. Bigger planets block more light, so they create deeper light
+        curves.`,
       },
       {
         slideId: 'slide5',
         title: `Transit`,
-        content: `Bigger planets block more light, so they create deeper light
-        curves. You can see that in the animation above (animation 2).
+        content: `You can see that in the animation above (animation 2).
         Also, the farther away a planet is, the longer it takes to orbit
         and pass in front of its star. So the longer a transit event lasts,
         the farther away that planet is from its star. But what happened
-        when more planets are transiting a star? As shown in the animation
+        when more planets are transiting a star?`,
+      },
+      {
+        slideId: 'slide6',
+        content: `As shown in the animation
         (animation 3), light curves get complicated when this happened. The
         combined light curves can give us the same information as a single
         one; it just takes more work from astronomers to pick out each
         planet in the data. NASA's Kepler mission, which hunted for planets
-        using the transit method, has found thousands of possible exoplane`,
+        using the transit method, has found thousands of possible exoplanet`
       },
       {
-        slideId: 'slide6',
+        slideId: 'slide7',
         title: `Direct Imaging and Challenges`,
-        content: `        Exoplanets are far away and are millions of times dimmer than the
+        content: `Exoplanets are far away and are millions of times dimmer than the
         stars they orbit. Unsurprisingly, taking pictures of them is
         exceedingly hard. The major problem astronomers face in trying to
         directly image exoplanets is that the stars they orbit are millions
@@ -207,7 +211,7 @@ export default [
         like trying to find a firefly flitting around a spotlight.`,
       },
       {
-        slideId: 'slide7',
+        slideId: 'slide8',
         title: `Techniques to Block Starlight`,
         content: `To overcome this challenge, astronomers use various techniques to
         block out the light of stars that might have planets orbiting them.
@@ -220,13 +224,14 @@ export default [
         observatories. `,
       },
       {
-        slideId: 'slide7',
+        slideId: 'slide9',
         title: `Techniques to Block Starlight`,
         content: `Second method is Star Shade: This device is positioned to block light
         from a star before it even enters a telescope. It would be a
         separate spacecraft, designed to position itself at just the right
         distance and angle to block starlight from the star astronomers are
-        observing. Direct imaging is still in its early stages, but there
+        observing. 
+        Direct imaging is still in its early stages, but there
         are high hopes that it will eventually be a key tool for finding
         and characterizing exoplanets.`,
       },

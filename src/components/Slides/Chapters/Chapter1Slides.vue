@@ -13,34 +13,51 @@
         :skyTranslateZ="-13"
         :skyScale="2.5">
       </background>
-      <button @click="startSlides" class="start-slides">
-        Start
-      </button>
+      <button @click="startSlides" class="start-slides">Start</button>
     </parallax-wrapper>
   </div>
 
   <div v-else class="container">
-    <slide-wrapper
-      :key="chapterSlides[currentSlideIndex].slideId"
-      :title="chapterSlides[currentSlideIndex].title"
-      :content="chapterSlides[currentSlideIndex].content">
-    </slide-wrapper>
+    <transition
+      enter-active-class="animate__animated animate__fadeInLeft"
+      leave-active-class="animate__animated animate__fadeOutLeft">
+      <slide-wrapper
+        :key="chapterSlides[currentSlideIndex].slideId"
+        :title="chapterSlides[currentSlideIndex].title"
+        :content="chapterSlides[currentSlideIndex].content"
+        :headerColor="'white'"
+        :contentColor="'white'">
+      </slide-wrapper>
+    </transition>
 
-    <button @click="prevSlide">Previous</button>
-    <button @click="nextSlide">Next</button>
+    <button
+      v-if="currentSlideIndex > 0"
+      @click="prevSlide"
+      class="prev-button">
+      Previous
+    </button>
+    <button
+      v-if="currentSlideIndex < chapterSlides.length - 1"
+      @click="nextSlide"
+      class="next-button">
+      Next
+    </button>
 
     <button
       v-if="currentSlideIndex === chapterSlides.length - 1"
-      @click="nextChapter">
+      @click="nextChapter"
+      class="next-chapter-button">
       Next Chapter
     </button>
 
     <button
       v-if="currentSlideIndex === 0 && chapterIndex > 0"
-      @click="prevChapter">
+      @click="prevChapter"
+      class="prev-chapter-button">
       Previous Chapter
     </button>
   </div>
+
 </template>
 
 <script>
@@ -48,14 +65,12 @@ import SlideWrapper from '../SlideWrapper.vue';
 import ParallaxWrapper from '@/components/Slides/ParallaxWrapper.vue';
 import slidesContent from '@/data/slidesContent.js';
 import Background from '../Background.vue';
-import Content from '../Content.vue';
 
 export default {
   components: {
     SlideWrapper,
     ParallaxWrapper,
     Background,
-    Content,
   },
   data() {
     return {
@@ -71,8 +86,8 @@ export default {
   },
   methods: {
     startSlides() {
-      this.slidesStarted = true; // Set to true to start displaying slides
-      this.currentSlideIndex = 0; // Reset slide index to start from the first slide
+      this.slidesStarted = true;
+      this.currentSlideIndex = 0;
     },
     nextSlide() {
       if (this.currentSlideIndex < this.chapterSlides.length - 1) {
@@ -100,9 +115,7 @@ export default {
   align-items: center;
   height: 100%;
   max-width: 845px;
-
-  background: linear-gradient(to bottom, #3e6fbf, #0f1b4d);
-  padding: 2rem;
+  background: rgba(0, 0, 255, 0.75);
   position: relative;
   border-radius: 15px;
   box-shadow: 0 0 10px #3e6fbf;
@@ -122,4 +135,56 @@ export default {
   cursor: pointer;
   z-index: 5;
 }
+
+button {
+  position: absolute;
+  bottom: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #3e6fbf;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+button:hover {
+  background: #2e5a9f;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.animate__fadeInLeft {
+  animation-duration: 0.7s;
+}
+.animate__fadeOutLeft {
+  animation-duration: 0.7s;
+}
+
+
+/* .planet-img {
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  width: 300px;
+  z-index: 0;
+  opacity: 0.6;
+  overflow: hidden;
+}
+
+.planet img {
+  max-width: 100%;
+  height: auto; 
+} */
 </style>
