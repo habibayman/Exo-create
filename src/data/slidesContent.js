@@ -10,7 +10,6 @@ export default [
         doesnt orbit our sun. Most orbit other stars, like Earth. Believe
         it or not, there are planets that orbit pairs or even groups of
         stars, imagine having three or four suns in the sky!`,
-        videoUrl: 'https://path_to_your_video.mp4',
       },
       {
         slideId: 'slide2',
@@ -155,6 +154,8 @@ export default [
         Even though the planet is small, it still has some gravitational
         force and affects its host star, even if that effect is much less
         pronounced than the one the star has on the planet.`,
+        videoUrl:
+          'https://exoplanets.nasa.gov/5_ways_content/vid/radial_velocity.mp4',
       },
       {
         slideId: 'slide3',
@@ -183,6 +184,8 @@ export default [
         and length of a transit can tell us a lot about the planet that's
         causing the transit. Bigger planets block more light, so they create deeper light
         curves.`,
+        videoUrl:
+          'https://exoplanets.nasa.gov/5_ways_content/vid/transit_method_single_planet.mp4',
       },
       {
         slideId: 'slide5',
@@ -192,6 +195,8 @@ export default [
         and pass in front of its star. So the longer a transit event lasts,
         the farther away that planet is from its star. But what happened
         when more planets are transiting a star?`,
+        videoUrl:
+          'https://exoplanets.nasa.gov/5_ways_content/vid/transit_method_double_planet.mp4',
       },
       {
         slideId: 'slide6',
@@ -201,6 +206,8 @@ export default [
         one; it just takes more work from astronomers to pick out each
         planet in the data. NASA's Kepler mission, which hunted for planets
         using the transit method, has found thousands of possible exoplanet`,
+        videoUrl:
+          'https://exoplanets.nasa.gov/5_ways_content/vid/transit_method_multiple_planets.mp4',
       },
       {
         slideId: 'slide7',
@@ -213,6 +220,8 @@ export default [
         planet or heat radiation from the planet itself is drowned out by
         the massive amounts of radiation coming from its host star. It's
         like trying to find a firefly flitting around a spotlight.`,
+        videoUrl:
+          'https://exoplanets.nasa.gov/5_ways_content/vid/direct_imaging.mp4',
       },
       {
         slideId: 'slide8',
