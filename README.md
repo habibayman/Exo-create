@@ -1,5 +1,5 @@
 <div align='center'>
-<h1> Your 101 Exoplanets Exploration Guide <img  align= center width=85px height=85px src="https://media.tenor.com/lZE8tZGKLQ4AAAAi/saturn-v-space.gif"></h1>
+<h1> Your 101 Exoplanets Exploration Guide <img  align= center width=80px height=80px src="https://media.tenor.com/lZE8tZGKLQ4AAAAi/saturn-v-space.gif"></h1>
 </div>
 
 **ExoCreate** is an interactive educational platform developed for the **NASA Space Apps Hackathon**. It introduces young learners to the world of exoplanets through an engaging 3D experience. The platform features a user-friendly interface, accessibility from any device, and high-quality educational content designed to make complex topics approachable and interesting.
@@ -10,9 +10,7 @@ Students can explore planetary science, take quizzes to test their knowledge, an
 # The Journey takes you through 3 planets 
 
 
-// will insert a video here 
-
-
+https://github.com/user-attachments/assets/13464b0a-0b89-41cd-b646-3af2ea683cc3
 
 
 - **Planet 1** (Interactive 3D Learning): 
@@ -21,6 +19,8 @@ Students can explore planetary science, take quizzes to test their knowledge, an
   This keeps them on their toes because, as research goes, students focus better knowing there is a quiz at the end of it. 
 - **Planet 3** (A Planet Creation Game):
   A dedicated section to design and customize your own exoplanet based on your preferences. The student can put parameters into this game like temperature, water level, mountain height, and then a 3D model of it appears.
+
+_Check out the live demo [here](https://exocreate.vercel.app/)_
 
 ---
 ## 🚀 Technologies Used
